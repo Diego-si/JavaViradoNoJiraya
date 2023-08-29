@@ -8,7 +8,7 @@ public class Anime {
         return episodios;
     }
 
-    // 0 - bloco de inicializxacao e executado quando a JVM carrega a classe
+    // 0 - bloco de inicializxacao estático e executado quando a JVM carrega a classe
     // 1 - alocado em memoria pro objeto
     // 2 - cada atributo de classe e criado e inicializado com valores default ou o que for passado
     // 3 - bloco de inicializacao executado
