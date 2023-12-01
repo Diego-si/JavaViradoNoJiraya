@@ -1,7 +1,5 @@
 package academy.devdojo.maratonajava.javacore.formatacao.test;
 
-import academy.devdojo.maratonajava.javacore.associacao.dominio.Local;
-
 import java.util.Locale;
 
 public class LocaleTest02 {
