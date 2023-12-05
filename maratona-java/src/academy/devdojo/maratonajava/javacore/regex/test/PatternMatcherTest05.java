@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 
 public class PatternMatcherTest05 {
     public static void main(String[] args) {
+        // site https://regexr.com
         // \d = Todos os digitos
         // \D = Tudo o que nao for dígito
         // \s = Espaços em branco \t \n \f \r
