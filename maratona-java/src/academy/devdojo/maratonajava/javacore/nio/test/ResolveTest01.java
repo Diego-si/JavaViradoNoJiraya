@@ -1,12 +1,10 @@
 package academy.devdojo.maratonajava.javacore.nio.test;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 
-public class PathTest03 {
+public class ResolveTest01 {
     public static void main(String[] args) throws IOException {
         Path dir = Paths.get("home/digo");
         Path arquivo = Paths.get("dev/arquivo.txt");
