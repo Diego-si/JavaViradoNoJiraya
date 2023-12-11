@@ -1,6 +1,7 @@
 package academy.devdojo.maratonajava.javacore.serializacao.test;
 
 import academy.devdojo.maratonajava.javacore.serializacao.dominio.Aluno;
+import academy.devdojo.maratonajava.javacore.serializacao.dominio.Turma;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -12,7 +13,9 @@ import java.nio.file.Paths;
 public class SerializacaoTest01 {
     public static void main(String[] args) {
         Aluno aluno = new Aluno(1L, "Digo", "123456789");
-//        serializar(aluno);
+        Turma turma = new Turma("Maratona Java Virado no Jiraya em Breve Ricos");
+        aluno.setTurma(turma);
+        serializar(aluno);
         derializar();
     }
 
@@ -30,9 +33,7 @@ public class SerializacaoTest01 {
         try (ObjectInputStream oos = new ObjectInputStream(Files.newInputStream(path))) {
             Aluno aluno = (Aluno) oos.readObject();
             System.out.println(aluno);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
