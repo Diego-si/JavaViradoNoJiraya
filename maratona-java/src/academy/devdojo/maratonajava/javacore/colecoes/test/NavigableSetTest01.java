@@ -13,13 +13,21 @@ class SmartphoneMarcaComparator implements Comparator<Smartphone> {
         return o1.getMarca().compareTo(o2.getMarca());
     }
 }
+
+class MangaPrecoComparator implements Comparator<Manga> {
+    @Override
+    public int compare(Manga o1, Manga o2) {
+        return Double.compare(o1.getPreco(), o2.getPreco());
+    }
+}
+
 public class NavigableSetTest01 {
     public static void main(String[] args) {
         NavigableSet<Smartphone> set = new TreeSet<>(new SmartphoneMarcaComparator());
         Smartphone smartphone = new Smartphone("123", "Nokia");
         set.add(smartphone);
 
-        NavigableSet<Manga> mangas = new TreeSet<>();
+        NavigableSet<Manga> mangas = new TreeSet<>(new MangaPrecoComparator());
         mangas.add(new Manga(5L, "Attack on titan",19.9,0));
         mangas.add(new Manga(1L,"Berserk",9.5,5));
         mangas.add(new Manga(4L,"Hellsing Ultimate",3.2,0));
@@ -31,6 +39,21 @@ public class NavigableSetTest01 {
             System.out.println(manga);
         }
 
+        Manga yuyu = new Manga(21L, "Yuyu Hasusho", 8, 5);
 
+        // lower <
+        // floor <=
+        // higher >
+        // ceiling >=
+        System.out.println();
+        System.out.println(mangas.lower(yuyu));
+        System.out.println(mangas.floor(yuyu));
+        System.out.println(mangas.higher(yuyu));
+        System.out.println(mangas.ceiling(yuyu));
+
+        System.out.println(mangas.size());
+        System.out.println(mangas.pollFirst());
+        System.out.println(mangas.pollLast());
+        System.out.println(mangas.size());
     }
 }
