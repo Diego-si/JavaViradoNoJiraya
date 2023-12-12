@@ -28,19 +28,14 @@ public class Manga implements Comparable<Manga> {
 
         Manga manga = (Manga) o;
 
-        if (Double.compare(preco, manga.preco) != 0) return false;
-        if (!id.equals(manga.id)) return false;
-        return nome.equals(manga.nome);
+        if (!Objects.equals(id, manga.id)) return false;
+        return Objects.equals(nome, manga.nome);
     }
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        result = id.hashCode();
-        result = 31 * result + nome.hashCode();
-        temp = Double.doubleToLongBits(preco);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (nome != null ? nome.hashCode() : 0);
         return result;
     }
 
