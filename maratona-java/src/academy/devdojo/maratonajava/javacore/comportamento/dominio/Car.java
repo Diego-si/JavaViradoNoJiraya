@@ -1,7 +1,7 @@
 package academy.devdojo.maratonajava.javacore.comportamento.dominio;
 
 public class Car {
-    private String name;
+    private String name = "Audi";
     private String color;
     private int year;
 
