@@ -1,11 +1,8 @@
 package academy.devdojo.maratonajava.javacore.streams.test;
 
-import academy.devdojo.maratonajava.javacore.streams.dominio.LightNovel;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class SteamTest04 {
     public static void main(String[] args) {
