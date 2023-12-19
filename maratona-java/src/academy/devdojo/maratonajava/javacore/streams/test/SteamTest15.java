@@ -5,7 +5,6 @@ import academy.devdojo.maratonajava.javacore.streams.dominio.LightNovel;
 import academy.devdojo.maratonajava.javacore.streams.dominio.Promotion;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static academy.devdojo.maratonajava.javacore.streams.dominio.Promotion.NORMAL_PRICE;
 import static academy.devdojo.maratonajava.javacore.streams.dominio.Promotion.UNDER_PROMOTION;
