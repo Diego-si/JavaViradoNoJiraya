@@ -26,7 +26,7 @@ public class SteamTest13 {
     public static void main(String[] args) {
         Map<Promotion, List<LightNovel>> collect = lightNovels
                 .stream()
-                .collect(groupingBy(ln -> ln.getPrice() < 6 ? UNDER_PROMOTION : NORMAL_PRICE));
+                .collect(groupingBy(SteamTest13::getPromotion));
 
         System.out.println(collect);
 
@@ -34,9 +34,13 @@ public class SteamTest13 {
         Map<Category, Map<Promotion, List<LightNovel>>> collect1 = lightNovels
                 .stream()
                 .collect(groupingBy(LightNovel::getCategory,
-                        groupingBy(ln -> ln.getPrice() < 6 ? UNDER_PROMOTION : NORMAL_PRICE
+                        groupingBy(SteamTest13::getPromotion
                         )));
 
         System.out.println(collect1);
+    }
+
+    private static Promotion getPromotion(LightNovel ln) {
+        return ln.getPrice() < 6 ? UNDER_PROMOTION : NORMAL_PRICE;
     }
 }
