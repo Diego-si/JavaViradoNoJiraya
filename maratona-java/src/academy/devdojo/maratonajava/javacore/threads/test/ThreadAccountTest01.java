@@ -3,7 +3,7 @@ package academy.devdojo.maratonajava.javacore.threads.test;
 import academy.devdojo.maratonajava.javacore.threads.dominio.Account;
 
 public class ThreadAccountTest01 implements Runnable{
-    private Account account = new Account();
+    private final Account account = new Account();
 
     public static void main(String[] args) {
         ThreadAccountTest01 threadAccountTest01 = new ThreadAccountTest01();
@@ -21,13 +21,18 @@ public class ThreadAccountTest01 implements Runnable{
             }
         }
     }
+
     private void withdrawal(int amount) {
-        if (account.getBalance() >= amount) {
-            System.out.println(getName() + " está indo sacar dinheiro");
-            account.withdrawal(amount);
-            System.out.println(getName() + " completou o saque, valor atual da conta "+ account.getBalance());
-        } else {
-            System.out.println("Sem dinheiro para "+ getName() + " efetuar o saque "+account.getBalance());
+        System.out.println(getName() + " #### fora do synchronized");
+        synchronized (account) {
+            System.out.println(getName() + " **** dentro do synchronized");
+            if (account.getBalance() >= amount) {
+                System.out.println(getName() + " está indo sacar dinheiro");
+                account.withdrawal(amount);
+                System.out.println(getName() + " completou o saque, valor atual da conta " + account.getBalance());
+            } else {
+                System.out.println("Sem dinheiro para " + getName() + " efetuar o saque " + account.getBalance());
+            }
         }
     }
 
