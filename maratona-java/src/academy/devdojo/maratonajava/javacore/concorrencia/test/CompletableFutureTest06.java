@@ -5,7 +5,6 @@ import academy.devdojo.maratonajava.javacore.concorrencia.service.StoreServiceWi
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.stream.Collectors;
 
 public class CompletableFutureTest06 {
     public static void main(String[] args) {
