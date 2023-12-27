@@ -1,6 +1,5 @@
 package academy.devdojo.maratonajava.javacore.padroesdeprojeto.test;
 
-import academy.devdojo.maratonajava.javacore.padroesdeprojeto.dominio.Aircraft;
 import academy.devdojo.maratonajava.javacore.padroesdeprojeto.dominio.AircraftSingletonEager;
 
 public class AircraftSingletonEagerTest01 {
